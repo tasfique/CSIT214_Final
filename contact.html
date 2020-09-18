@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OVOTUNITY</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
+    <link href="default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <style type="text/css">
+        #header-wrapper {
+            overflow: visible;
+        }
+        
+        #header-wrapper>#header>#menu>ul>li {
+            margin: 0px 40px 0px 40px;
+        }
+        
+        #but {
+            display: block;
+            position: absolute;
+            left: calc(100% - 85px);
+            height: 100px;
+            width: 100px;
+            background-image: url("./images/menubutton.png");
+            background-size: contain;
+        }
+        
+        #but>li>a {
+            display: block;
+            padding: 10px 20px;
+            text-align: right;
+            text-decoration: none;
+        }
+        
+        #but ul {
+            height: 0;
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            transition: all .5s ease;
+            top: 105px;
+            left: -60px;
+            width: 100%;
+        }
+        
+        #but:hover ul {
+            opacity: 1;
+        }
+        
+        #but li {
+            margin-bottom: 5px;
+        }
+        
+        #but ul a {
+            color: #5352ec;
+            background-color: white;
+            display: block;
+            width: 150px;
+        }
+    </style>
+    <script>
+        function resizeNavigation(winWidth, navWidth) {
+            var navBar = $("#menu > #bar");
+            var navButton = $("#menu > #but")
+            var windowWidth = winWidth;
+            var navigationWidth = navWidth;
+            var isNavBar = initNavigation(windowWidth, navigationWidth);
+
+            function initNavigation(_winWidth) {
+                if (_winWidth < navigationWidth) {
+                    navBar.css("visibility", "hidden");
+                    navButton.css("visibility", "visible");
+                    return false;
+                } else {
+                    navBar.css("visibility", "visible");
+                    navButton.css("visibility", "hidden");
+                    return true;
+                }
+            }
+
+            function chageNav(_winWidth) {
+                if (_winWidth < navigationWidth) {
+                    if (isNavBar) {
+                        //change navigation bar to button
+                        navBar.css("visibility", "hidden");
+                        navButton.css("visibility", "visible");
+                        isNavBar = false;
+                    }
+                } else {
+                    if (!isNavBar) {
+                        //chage navigation button to bar
+                        navBar.css("visibility", "visible");
+                        navButton.css("visibility", "hidden");
+                        isNavBar = true;
+                    }
+                }
+            }
+            return {
+                changeType: function() {
+                    chageNav($(window).width())
+                }
+            }
+        }
+
+
+        var navigationControl;
+        $(document).ready(function() {
+            headerWidth = $("#header").width();
+            navigationControl = resizeNavigation($(window).width(), 1185);
+            $(window).resize(navigationControl.changeType);
+        })
+    </script>
+</head>
+
+<body>
+    <header>
+        <div id="header-wrapper">
+            <div id="header" class="container">
+                <div id="logo">
+                    <img src="images/logo.png" width="100" height="100" align="left">
+                </div>
+                <div id="menu">
+                    <span id="but" style="visibility : hidden">
+						<ul>
+							<li><a href="index.html" accesskey="1" title="">Home</a></li>
+							<li><a href="about.html" accesskey="2" title="">about us</a></li>
+							<li class="active"><a href="contact.html" accesskey="3" title="">contact</a></li>
+							<li><a href="proposal.html" accesskey="4" title="">proposal</a></li>
+						</ul>
+					</span>
+                    <ul id="bar" style="visibility : hidden">
+                        <li><a href="index.html" accesskey="1" title="">Home</a></li>
+                        <li><a href="about.html" accesskey="2" title="">about us</a></li>
+                        <li class="active"><a href="contact.html" accesskey="3" title="">contact</a></li>
+                        <li><a href="proposal.html" accesskey="4" title="">proposal</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="contactHero">
+
+        <div class="wrapper">
+            <div class="contactHeroText">
+            <span>
+                <h2>Welcome to
+                    <font style="color: #5253ec">"OVOTUNITY"</font>
+                </h2>
+                </br>
+                </br>
+                </br>
+            <p>We offer various options to contact us.</br>
+                Click icons below to check our Twitter and Facebook. You can simply email us, too.
+            </p>
+
+   
+            <ul class="contact">
+                <li><a href="https://www.twitter.com" class="icon icon-twitter"><span>Twitter</span></a></li>
+                <li><a href="https://www.facebook.com" class="icon icon-facebook"><span>Facebook</span></a></li>
+                 <p>
+                    <font style="color: #9a9a9a">Email address : </font>
+                    <font style="color: red">no10wilshere@gmail.com</font>
+                </p>
+          
+            </ul>
+        </span>
+        </div>
+    </div>
+    
+    </div>
+</body>
+
+</html>

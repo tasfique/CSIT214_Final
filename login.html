@@ -1,0 +1,63 @@
+<link href="logo.css" rel="stylesheet" id="bootstrap-css">
+<!------ Include the above in your HEAD tag ---------->
+
+<script src="logo.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+
+<body>
+    <div class="container">
+      <div class="row">
+			<div class="col-md-5 mx-auto">
+			   <div id="first">
+   				<div class="myform form ">
+   					<div class="logo mb-3">
+   						<div class="col-md-12 text-center">
+   						   <h1>Admin Login</h1>
+   						</div>
+   					</div>
+                      <form action="" method="post" name="login">
+                              <div class="form-group">
+                                 <label style="font-size: 20px;">Enter Admin Password</label><br>
+                                 <input style="margin-top: 15px; font-size: 15px; text-align: center;" type="password" name="password"  class="password" id="password" placeholder="Enter Your Password Here." pattern="^12345$">
+                              </div> 
+                              <div class="col-md-12 text-center ">
+                                 <button style="margin-top: 15px; font-size: 15px;" type="button" onclick="ButtonOnClick()" class=" btn btn-block mybtn btn-primary tx-tfm">Validate</button>
+                              </div>
+                              <div class="col-md-12 mb-3">
+                                 <br><br><br>
+                                 <p class="text-center" id="google">
+                                    <a href="https://drive.google.com/drive/u/0/my-drive" class="google btn mybtn"><i class="fa fa-google-plus">
+                                    </i> SignIn To GoogleDrive
+                                    </a>
+                                 </p>
+                              </div>
+                           </form>
+                    
+   				   </div>
+			   </div>
+		    </div>
+      </div>
+   </div>
+
+   <script type="text/javascript">
+      document.getElementById("google").style.display = "none";
+      
+      function ButtonOnClick() {
+         var password =  document.getElementById("password").value;
+         var check = document.getElementById("password").pattern;
+
+         if (password != "12345") {
+            alert("Password do not match");
+            return false;
+         }
+         document.getElementById("google").style.display = "";
+         return true;
+      }
+
+   </script>
+      
+         
+</body>
